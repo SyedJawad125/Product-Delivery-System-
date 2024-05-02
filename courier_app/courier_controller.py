@@ -1,7 +1,7 @@
 from django.db import transaction
 from django.utils import timezone
 from django.contrib.auth import authenticate
-from courier_app.filters import ProductFilter, OrderFilter
+from courier_app.filters import OrderFilter
 from courier_app.courier_serializer import *
 from courier_app.models import Product
 from utils.reusable_methods import get_first_error_message, generate_six_length_random_number
@@ -11,7 +11,7 @@ from utils.helper import create_response, paginate_data
 from utils.response_messages import *
 # from vehicle.serializer import serializer
 
-from chat_site.settings import EMAIL_HOST_USER
+# from chat_site.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
 from datetime import date, timedelta
 

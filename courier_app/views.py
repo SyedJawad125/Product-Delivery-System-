@@ -8,12 +8,12 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 #from .blog_serializer import BlogSerializer
 from utils.base_authentication import JWTAuthentication
-from .courier_controller import ProductController, OrderController
+from .courier_controller import OrderController
 
 from rest_framework.permissions import IsAdminUser
 # Create your views here.
 
-product_controller = ProductController()
+# product_controller = ProductController()
 order_controller = OrderController()
 
 
