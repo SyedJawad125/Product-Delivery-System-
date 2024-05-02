@@ -16,21 +16,6 @@ from rest_framework.permissions import IsAdminUser
 product_controller = ProductController()
 order_controller = OrderController()
 
-class ProductViews(ModelViewSet):
-    authentication_classes = [JWTAuthentication]
-
-    def post_product(self, request):
-        return product_controller.create(request)
-
-    def get_product(self, request):
-        return product_controller.get_product(request)
-
-    def update_product(self, request):
-        return product_controller.update_product(request)
-
-    def delete_product(self, request):
-        return product_controller.delete_product(request)
-
 
 class OrderViews(ModelViewSet):
     authentication_classes = [JWTAuthentication]

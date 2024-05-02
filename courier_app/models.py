@@ -1,18 +1,10 @@
 from django.db import models
+from permission_app.models import Product
 from user_auth.models import User
 from datetime import timezone
 # Create your models here.
 
 # added_by = created_by
-
-class Product(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-    price = models.PositiveIntegerField()
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE,related_name='product_created_by', null=True,
-                                   blank=True)
-    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_updated_by', null=True,
-                                   blank=True)
 
 class Order(models.Model):
 
