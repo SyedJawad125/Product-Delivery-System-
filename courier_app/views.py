@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
-
-from django.shortcuts import render
 from . models import Product
 from django.shortcuts import render,HttpResponse
 from rest_framework.viewsets import ModelViewSet
@@ -9,7 +6,6 @@ from rest_framework.response import Response
 #from .blog_serializer import BlogSerializer
 from utils.base_authentication import JWTAuthentication
 from .courier_controller import OrderController
-
 from rest_framework.permissions import IsAdminUser
 # Create your views here.
 
