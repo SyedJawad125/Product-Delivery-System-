@@ -16,8 +16,6 @@ from django.core.mail import send_mail
 from datetime import date, timedelta
 
 
-
-
 class OrderController:
     serializer_class = OrderSerializer
     order_detail_serializer = OrderDetailSerializer
