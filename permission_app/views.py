@@ -3,17 +3,14 @@ from . models import Role,Permission
 from django.shortcuts import render,HttpResponse
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-#from .blog_serializer import BlogSerializer
 from utils.base_authentication import JWTAuthentication
 from .permission_controller import RoleController, PermissionController
-# from .decorator import permission_required
 from rest_framework.permissions import IsAdminUser
 # Create your views here.
 
 
 role_controller = RoleController()
 permission_controller = PermissionController()
-# product_controller = ProductController()
 
 class RoleViews(ModelViewSet):
 

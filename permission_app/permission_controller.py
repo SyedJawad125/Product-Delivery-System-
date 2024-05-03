@@ -1,15 +1,12 @@
 from django.utils import timezone
 from django.contrib.auth import authenticate
 from permission_app.filters import RoleFilter, PermissionFilter
-# from permission_app.permission_serializer import *
 from permission_app.models import Role, Permission
 from permission_app.permission_serializer import RoleSerializer, PermissionSerializer
 from utils.reusable_methods import get_first_error_message, generate_six_length_random_number
 from rest_framework.response import Response
 from django.db.models import Sum, Count, Avg, F
 from utils.helper import create_response, paginate_data
-# from vehicle.serializer import serializer
-
 # from chat_site.settings import EMAIL_HOST_USER
 # from django.core.mail import send_mail
 

@@ -1,15 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
-
-# from chat_site.settings import AUTH_USER_MODEL
-# from user_auth.models import AUTH_USER_MODEL
-# from user_auth.models import User
-# from user_auth.models import User
-# from user_auth.models import User
-
-# Create your models here.
 
 class Role(models.Model):
     name = models.CharField(max_length=50)

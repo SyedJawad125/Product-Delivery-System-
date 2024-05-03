@@ -18,5 +18,4 @@ urlpatterns=[
     #                         "patch":"update_product",
     #                         "delete":"delete_product"})),
 
-
 ]
