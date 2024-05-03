@@ -38,3 +38,7 @@ class ProductSerializer(ModelSerializer):
         model = Product
         fields = '__all__'
     
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['added_by'] = UserListingSerializer(instance.added_by).data if instance.added_by else None
+        return data

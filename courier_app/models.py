@@ -39,7 +39,7 @@ class OrderDetail(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE,related_name='product_created_by', null=True,
+    added_by = models.ForeignKey(User, on_delete=models.CASCADE,related_name='product_created_by', null=True,
                                    blank=True)
     updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_updated_by', null=True,
                                    blank=True)

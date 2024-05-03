@@ -149,7 +149,9 @@ class ProductController:
 
     def create(self, request):
         try:
-
+            request.POST._mutable = True
+            request.data["added_by"] = request.user.guid
+            request.POST._mutable = False
             # if request.user.role in ['admin','manager'] or request.user.is_superuser: # roles
             validated_data = ProductSerializer(data=request.data)
             if validated_data.is_valid():
