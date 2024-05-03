@@ -33,5 +33,8 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     
-
+class ProductSerializer(ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
     

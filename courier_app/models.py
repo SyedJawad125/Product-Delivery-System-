@@ -1,5 +1,5 @@
 from django.db import models
-from permission_app.models import Product
+# from permission_app.models import Product
 from user_auth.models import User
 from datetime import timezone
 # Create your models here.
@@ -28,10 +28,18 @@ class OrderDetail(models.Model):
     unit_price = models.PositiveBigIntegerField()
     quantity = models.PositiveIntegerField()
     total_price = models.PositiveBigIntegerField()
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='order_detail_product')
+    # product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='order_detail_product')
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_detail_order')
 
 # class rider(models.Model):
 #     name = models.CharField(max_length=50)
 #     vehicle_type = models.CharField(max_length=50)
 #     contact_number = models.PositiveIntegerField()
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE,related_name='product_created_by', null=True,
+                                   blank=True)
+    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_updated_by', null=True,
+                                   blank=True)

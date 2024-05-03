@@ -1,4 +1,4 @@
-from .models import Role, Permission, Product
+from .models import Role, Permission
 from rest_framework.serializers import ModelSerializer
 from user_auth.user_serializer import UserListingSerializer
 
@@ -25,7 +25,7 @@ class PermissionSerializer(ModelSerializer):
     #     return data
 
 
-class ProductSerializer(ModelSerializer):
-    class Meta:
-        model = Product
-        fields = '__all__'
+# class ProductSerializer(ModelSerializer):
+#     class Meta:
+#         model = Product
+#         fields = '__all__'

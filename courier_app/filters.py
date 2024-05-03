@@ -15,3 +15,12 @@ class OrderFilter(FilterSet):
     class Meta:
         model = Order
         fields ='__all__'
+
+
+class ProductFilter(FilterSet):
+    id = CharFilter(field_name='id')
+    name = CharFilter(field_name='name', lookup_expr='icontains')
+
+    class Meta:
+        model = Product
+        fields ='__all__'

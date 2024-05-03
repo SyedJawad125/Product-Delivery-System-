@@ -26,10 +26,10 @@ class PermissionFilter(FilterSet):
         fields ='__all__'
 
 
-class ProductFilter(FilterSet):
-    id = CharFilter(field_name='id')
-    name = CharFilter(field_name='name', lookup_expr='icontains')
+# class ProductFilter(FilterSet):
+#     id = CharFilter(field_name='id')
+#     name = CharFilter(field_name='name', lookup_expr='icontains')
 
-    class Meta:
-        model = Product
-        fields ='__all__'
+#     class Meta:
+#         model = Product
+#         fields ='__all__'
