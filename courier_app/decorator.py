@@ -5,7 +5,10 @@ from permission_app.models import Role
 def permission_required(permissions):
     def decorator(drf_custom_method):
         def _decorator(self, *args, **kwargs):
-            if Role.objects.filter(id=self.request.user.role.pk, permissions__code__in=permissions).exists():
+            
+            if self.request.user.is_superuser:
+                return drf_custom_method(self, *args, **kwargs)
+            elif Role.objects.filter(id=self.request.user.role.pk, permissions__code__in=permissions).exists():
                 return drf_custom_method(self, *args, **kwargs)
             else:
                 raise PermissionDenied()
